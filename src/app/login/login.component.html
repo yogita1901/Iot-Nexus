@@ -1,0 +1,55 @@
+<div class="card-container" fxLayout="column">
+    <div class="formContainer">
+      <h2 class="form-heading">Login Form</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" style="width: 95%;">
+        <div>
+          <label class="label" for="email">Email</label>
+        </div>
+        <div class="input-container" [ngClass]="{ 'error-border': shouldDisplayError('email') }">
+          <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Email"
+          required
+        />
+        </div>
+        <small class="error" *ngIf="loginForm.get('email')?.errors?.['required'] && (loginForm.get('email')?.touched || submitClicked)">
+         Email is required
+        </small>                 
+        <small class="error" *ngIf="loginForm.get('email')?.errors?.['email'] && (loginForm.get('email')?.touched || submitClicked) && shouldDisplayError('email')">
+          Invalid email address
+        </small> 
+        <small class="error"  *ngIf="emailErrorAfterSubmit">
+          Invalid user id
+        </small>
+        <div>
+          <label class="label" for="password">Password</label>
+        </div>
+        <div class="input-container" [ngClass]="{ 'error-border': shouldDisplayError('password') }">
+          <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="Password"
+          required
+        />
+        </div>
+        <small class="error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched || shouldDisplayError('password')">
+          Password is required
+        </small>
+        <small class="error" *ngIf="passErrorAfterSubmit">
+          Wrong password
+        </small>
+        <div class="login-link">
+          <a routerLink="/forgot-password" >Forgot password?</a>
+        </div>
+        <div class="submit-button-container" fxLayoutAlign="center center">
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+        <div class="login-link">
+          <a routerLink="/signup" >Create new account</a>
+        </div>     
+      </form>
+    </div>
+  </div>

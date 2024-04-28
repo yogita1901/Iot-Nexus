@@ -1,0 +1,97 @@
+.dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidenav {
+    width: 250px;
+    background-color: #f2f4f7;
+    transition: width 0.3s ease;
+    flex-direction: column;
+    gap: 2px;
+    height: 100%;
+    padding: 8px;
+    transition: width .3s ease;
+    position: fixed;
+  }
+  
+  .sidenav.collapsed {
+    width: 60px;
+  }
+  
+  .logo-row {
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 16px;
+  }
+  
+  .logo {
+    display: flex;
+    place-content: center;
+    color: #03030aa6;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -.4px;
+    line-height: 28px;
+  }
+  
+  .image {
+    height: 2em;
+    min-height: 3em;
+    min-width: 4em;
+    object-fit: fill;
+    width: 3em;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    justify-content: space-between; 
+  }
+  
+  .left-content {
+    display: flex; 
+    align-items: center; 
+  }
+  
+  .right-content {
+    margin-left: auto;
+  }
+  
+  .option-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .collapse-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .divider {
+    border-top: 1px solid #a7a7ad61;
+    height: 1px;
+    margin: 16px 0;
+  }
+  
+  .icon {
+    height: 0.5em;
+    min-height: 1em;
+    min-width: 1em;
+    object-fit: fill;
+    width: 0.5em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+  }
+  

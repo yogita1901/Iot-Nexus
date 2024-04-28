@@ -1,0 +1,590 @@
+<div class="section is--hero flex-center">
+  <div class="hero-video__cover"></div>
+  <div class="hero-video w-embed">
+    <video
+      style="
+        object-fit: cover;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+      "
+      preload="auto"
+      playsinline=""
+      autoplay=""
+      loop=""
+      muted=""
+    >
+      <source src="assets/iot-bg-movie.mp4" type="video/mp4" />
+    </video>
+
+    <style>
+      .videoBackground > video {
+        object-fit: cover;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+      }
+      .typewriter-text {
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0 auto;
+        display: inline-block;
+        border-right: 0.15em solid #24c48e;
+        animation: typing 6s steps(40, end), blink-caret 0.75s step-end infinite;
+      }
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: orange;
+        }
+      }
+    </style>
+  </div>
+  <div class="container">
+    <div class="grid">
+      <div class="grid__item is--70">
+        <div class="h1__wrapper mb-20">
+          <h1 class="h2z is--white">
+            We empower you with innovative<strong> </strong><br /><span
+              class="text-span"
+            >
+              <strong> IoT solutions</strong></span
+            ><br /><span class="typewriter-text">
+              for efficient fluid management.</span
+            >
+          </h1>
+        </div>
+        <div class="lead-text__wrapper mb-80">
+          <p class="lead-text-small is--white">
+            Water is a precious resource, and managing it effectively is crucial
+            for sustainable development. HydroSense is our innovative solution
+            designed to revolutionize water level monitoring and control in
+            various applications.
+          </p>
+        </div>
+        <div class="button__wrapper">
+          <a href="/signup" class="ghost-button is--hero w-button"
+            >Get Started</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a
+  href="javascript:void(0);"
+    class="link-block arrow-center w-inline-block w--current"
+    [style.transform]="'translate3d(0px, ' + translateYValue + 'px, 0px)'"
+    (click)="scrollToNextSection()"
+    ><img
+      src="https://assets-global.website-files.com/6272e11601c9e296becde07b/62777ba5918df3048888d695_green%20arrow.png"
+      loading="lazy"
+      alt=""
+      class="image-7"
+  /></a>
+</div>
+
+<div d="next-section" #nextSection  class="section is--grey">
+  <div class="container is--pt2 is--pb2 our-clients">
+    <div class="grid">
+      <div class="grid__item">
+        <div class="subtitle__wrapper mb-20">
+          <p class="subtitle">Vision of IoT Nexus:</p>
+        </div>
+        <div class="h__wrapper mb-20">
+          <h2 class="h2">
+            <span class="green__span"> Empowering Sustainable Resource Management </span>through Innovative IoT Solutions
+          </h2>
+        </div>
+        <div class="text__wrapper mb-20">
+          <p class="p">
+            We aim to integrate diverse IoT sensors, enhance dashboard functionality for unified control, facilitate seamless communication between devices, offer scalable and customizable solutions, prioritize user experience with intuitive interfaces, and enable direct message transmission.
+          </p>
+        </div>
+      </div>
+      <div class="grid__item is--100">
+        <div class="cards__grid">
+          <div class="card__wrapper card-style">
+            <div class="icon mb-30">
+              <img
+                src="https://cdn0.iconfinder.com/data/icons/sustainability-fill-ecological-balance/512/Renewable_energy-1024.png"
+                loading="lazy"
+                alt=""
+                class="img"
+              />
+            </div>
+            <div class="title__wrapper mb-20">
+              <h5 class="h5 is--blue">Empowering Sustainability Through IoT:</h5>
+            </div>
+            <div class="text__wrapper">
+              <p class="p-small">
+                Develop innovative IoT solutions, starting with 'HydroSense,' to empower sustainable resource management, specifically focusing on water conservation and responsible usage.              </p>
+            </div>
+          </div>
+          <div class="card__wrapper card-style">
+            <div class="icon mb-30">
+              <img
+                src="https://cdn0.iconfinder.com/data/icons/forgen-seo-1/64/seo-monitoring-1024.png"
+                loading="lazy"
+                alt=""
+                class="img"
+              />
+            </div>
+            <div class="title__wrapper mb-20">
+              <h5 class="h5 is--blue">Remote Monitoring and Proactive Control:</h5>
+            </div>
+            <div class="text__wrapper">
+              <p class="p-small">
+                Enable remote monitoring and control of water levels, providing real-time insights and alerts to optimize water usage, prevent wastage due to leaks or overflow, and promote efficient resource stewardship.
+              </p>
+            </div>
+          </div>
+          <div class="card__wrapper card-style">
+            <div class="icon mb-30">
+              <img
+                src="https://cdn2.iconfinder.com/data/icons/marketing-management-line-synergy/512/Trend-512.png"
+                loading="lazy"
+                alt=""
+                class="img"
+              />
+            </div>
+            <div class="title__wrapper mb-20">
+              <h5 class="h5 is--blue">Continuous Innovation for Global Impact:</h5>
+            </div>
+            <div class="text__wrapper">
+              <p class="p-small">
+                Commit to continuous innovation, scalability, and user-centric design, aiming to make a meaningful global impact by fostering a culture of sustainability, environmental awareness, and responsible resource management.              </p>
+            </div>
+            <div class="text__wrapper">
+              <p class="p-small">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="products-section">
+  <span class="product-heading"> Our Products</span>
+  <section class="features-section">
+    <div class="feature" fxLayoutGap="2em">
+      <h2>HydroSense</h2>
+      <p>
+        Monitor water levels in real-time and track usage patterns.Receive
+        instant alerts for tank levels and potential issues.Control water
+        management systems remotely from anywhere.
+      </p>
+    </div>
+    <div class="feature">
+      <h2>Smart notice board</h2>
+      <p>
+        A smart visitor counter system, enabling real-time message transfer,
+        timetable display, and visitor tracking on a smart notice board.
+        Faculties can make instant timetable changes reflected on the board,
+        enhancing overall efficiency and communication
+      </p>
+    </div>
+    <div class="feature">
+      <h2>FuelGuard</h2>
+      <p>
+        FuelGuard is a comprehensive system designed to monitor fuel levels,
+        detect leaks, track consumption, and provide real-time monitoring for
+        efficient fuel management.
+      </p>
+      <h4>Coming soon...</h4>
+    </div>
+  </section>
+</div>
+<div id="features" class="section is--grey">
+  <div class="container is--pt2 is--pb2">
+    <div class="grid">
+      <div class="grid__item is--60">
+        <div class="subtitle__wrapper mb-20">
+          <p class="subtitle">WHY IOT NEXUS</p>
+        </div>
+        <div class="h__wrapper mb-40">
+          <h2 class="h2 h2.is--black">
+            IoT Nexus Introduces
+            <span class="green__span">HydroSense: </span>Revolutionizing Water
+            Management
+          </h2>
+        </div>
+        <div class="text__wrapper mb-60">
+          <p class="p">
+            When it comes to addressing the critical challenge of water
+            management, IoT Nexus emerges as a premier choice, offering
+            innovative solutions that revolutionize how we monitor and control
+            water resources.
+          </p>
+        </div>
+      </div>
+      <div class="grid__item is--100">
+        <div class="cards__grid">
+          <div class="card__wrapper">
+            <div class="icon mb-30">
+              <img
+                src="https://assets-global.website-files.com/6272e11601c9e296becde07b/6273ec664c0c09b96e27ddca_blynk_icon_partner.png"
+                loading="lazy"
+                alt=""
+                class="img"
+              />
+            </div>
+            <div class="title__wrapper mb-20">
+              <h5 class="h5 is--blue">Real-time Monitoring</h5>
+            </div>
+            <div class="text__wrapper">
+              <p class="p-small">
+                Stay updated with real-time data on water levels, consumption
+                patterns, and alerts, ensuring proactive management
+              </p>
+            </div>
+          </div>
+          <div class="card__wrapper">
+            <div class="icon mb-30">
+              <img
+                src="https://assets-global.website-files.com/6272e11601c9e296becde07b/6273ec655ac01d06dd7a3dfa_blynk_icon_moving.png"
+                loading="lazy"
+                alt=""
+                class="img"
+              />
+            </div>
+            <div class="title__wrapper mb-20">
+              <h5 class="h5 is--blue">Automatic Alerts</h5>
+            </div>
+            <div class="text__wrapper">
+              <p class="p-small">
+                Receive instant alerts for tank levels and potential issues
+              </p>
+            </div>
+          </div>
+          <div class="card__wrapper">
+            <div class="icon mb-30">
+              <img
+                src="https://assets-global.website-files.com/6272e11601c9e296becde07b/6273ec665cc5ebd5cdb4db39_blynk_icon_shield.png"
+                loading="lazy"
+                alt=""
+                class="img"
+              />
+            </div>
+            <div class="title__wrapper mb-20">
+              <h5 class="h5 is--blue">Remote Control</h5>
+            </div>
+            <div class="text__wrapper">
+              <p class="p-small">
+                Effortlessly control water resources remotely to prevent wastage
+                when tanks reach capacity
+              </p>
+            </div>
+          </div>
+          <div class="card__wrapper">
+            <div class="icon mb-30">
+              <img
+                src="https://cdn2.iconfinder.com/data/icons/whcompare-blue-green-web-hosting-1/444/managed-hosting-1024.png"
+                loading="lazy"
+                alt=""
+                class="img"
+              />
+            </div>
+            <div class="title__wrapper mb-20">
+              <h5 class="h5 is--blue">User-friendly Interface</h5>
+            </div>
+            <div class="text__wrapper">
+              <p class="p-small">
+                Intuitive interfaces accessible via web or mobile, providing
+                easy navigation and comprehensive insights for users
+              </p>
+            </div>
+          </div>
+          <div class="card__wrapper">
+            <div class="icon mb-30">
+              <img
+                src="https://cdn2.iconfinder.com/data/icons/whcompare-blue-green-web-hosting-1/523/server-resource-scaling-1024.png"
+                loading="lazy"
+                alt=""
+                class="img"
+              />
+            </div>
+            <div class="title__wrapper mb-20">
+              <h5 class="h5 is--blue">Scalability</h5>
+            </div>
+            <div class="text__wrapper">
+              <p class="p-small">
+                Designed for scalability, making it suitable for both individual
+                users and large-scale deployments in businesses or communities
+              </p>
+            </div>
+          </div>
+          <div class="card__wrapper">
+            <div class="icon mb-30">
+              <img
+                src="https://cdn2.iconfinder.com/data/icons/whcompare-blue-green-web-hosting-1/420/shared-hosting-1024.png"
+                loading="lazy"
+                alt=""
+                class="img"
+              />
+            </div>
+            <div class="title__wrapper mb-20">
+              <h5 class="h5 is--blue">Advanced Technology Integration</h5>
+            </div>
+            <div class="text__wrapper">
+              <p class="p-small">
+                Leveraging cutting-edge IoT technology for seamless
+                connectivity, data management, and efficient resource
+                utilization
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="background-color: #f6f6f6;">
+  <div class="border"></div>
+</div>
+<div class="section is--dark">
+  <div class="container is--pt2 is--pb2">
+    <div class="grid is--horisontal">
+      <div class="grid__item">
+        <div class="subtitle__wrapper mb-20">
+          <p class="subtitle is--light-blue">
+            Engineered for versatile applications
+          </p>
+        </div>
+        <div class="h__wrapper mb-40 is--white">
+          <h2 class="h2 is--white">
+            Leveraging cutting-edge <br />
+            <span class="green__span">IoT technology</span><br />to deliver
+            robust, future-ready solutions.
+          </h2>
+        </div>
+        <div class="text__wrapper-1-colum">
+          <p class="p is--white">
+            Empowering developers with seamless hardware integration using
+            popular MCUs like ESP32 or Arduino, requiring just 10 lines of code.
+            Facilitating device interaction without the need for advanced
+            technical expertise.
+          </p>
+        </div>
+        <div class="button__wrapper">
+          <a href="/signup" class="primary-button w-button">START FREE</a>
+        </div>
+      </div>
+      <div class="grid__item">
+        <div class="img-50">
+          <img
+            src="assets/code_img.png"
+            loading="lazy"
+            sizes="100vw"
+            alt=""
+            class="img"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="spacer-120"></div>
+    <div class="cards__grid4">
+      <div class="card__wrapper">
+        <div class="icon mb-30">
+          <img
+            src="https://assets-global.website-files.com/6272e11601c9e296becde07b/6273e5e29e35c1122f835b0b_blynk_icon_community.png"
+            loading="lazy"
+            alt=""
+            class="img"
+          />
+        </div>
+        <div class="title__wrapper mb-20">
+          <h5 class="h5 is--lightblue">Community Engagement</h5>
+        </div>
+        <div class="text__wrapper">
+          <p class="p-small is--white">
+            Foster a vibrant IoT developers community within IoT Nexus, promoting collaboration and knowledge sharing among engineers worldwide.
+          </p>
+        </div>
+      </div>
+      <div class="card__wrapper">
+        <div class="icon mb-30">
+          <img
+            src="https://assets-global.website-files.com/6272e11601c9e296becde07b/6273e5e2cd783d6758ba3335_blynk_icon_mobile_ap.png"
+            loading="lazy"
+            alt=""
+            class="img"
+          />
+        </div>
+        <div class="title__wrapper mb-20">
+          <h5 class="h5 is--lightblue">Real-Time Monitoring</h5>
+        </div>
+        <div class="text__wrapper">
+          <p class="p-small is--white">
+            Leverage IoT Nexus's real-time monitoring capabilities to track and visualize data from your IoT devices instantly.
+          </p>
+        </div>
+      </div>
+      <div class="card__wrapper">
+        <div class="icon mb-30">
+          <img
+            src="https://assets-global.website-files.com/6272e11601c9e296becde07b/6273e5e25ac01d9a8e7a06eb_blynk_icon_web_app_d.png"
+            loading="lazy"
+            alt=""
+            class="img"
+          />
+        </div>
+        <div class="title__wrapper mb-20">
+          <h5 class="h5 is--lightblue"><strong>Data Analytics and Insights</strong></h5>
+        </div>
+        <div class="text__wrapper">
+          <p class="p-small is--white">
+            Utilize IoT Nexus to gain valuable insights from your IoT data, enabling you to identify trends, optimize performance, and drive informed decision-making.
+          </p>
+        </div>
+      </div>
+      <div class="card__wrapper">
+        <div class="icon mb-30">
+          <img
+            src="https://assets-global.website-files.com/6272e11601c9e296becde07b/6273e5e2111fffe2322872e7_blynk_icon_api.png"
+            loading="lazy"
+            alt=""
+            class="img"
+          />
+        </div>
+        <div class="title__wrapper mb-20">
+          <h5 class="h5 is--lightblue">Simple APIs Integration</h5>
+        </div>
+        <div class="text__wrapper">
+          <p class="p-small is--white">
+            Take advantage of flexible firmware and REST APIs provided by IoT Nexus to seamlessly exchange data between hardware devices and applications.
+          </p>
+        </div>
+      </div>
+      <div class="card__wrapper">
+        <div class="icon mb-30">
+          <img
+            src="https://assets-global.website-files.com/6272e11601c9e296becde07b/6273e5e1e848857fb2c5cd99_blynk_icon_hardware.png"
+            loading="lazy"
+            alt=""
+            class="img"
+          />
+        </div>
+        <div class="title__wrapper mb-20">
+          <h5 class="h5 is--lightblue">Hardware Compatibility</h5>
+        </div>
+        <div class="text__wrapper">
+          <p class="p-small is--white">
+            Benefit from IoT Nexus's support for a wide range of hardware models, including ESP32, Arduino, Raspberry Pi and many others, ensuring compatibility with diverse IoT devices.
+          </p>
+        </div>
+      </div>
+      <div class="card__wrapper">
+        <div class="icon mb-30">
+          <img
+            src="https://assets-global.website-files.com/6272e11601c9e296becde07b/6273e5e1d74db5c06dc2eb79_blynk_icon_cloud.png"
+            loading="lazy"
+            alt=""
+            class="img"
+          />
+        </div>
+        <div class="title__wrapper mb-20">
+          <h5 class="h5 is--lightblue">Cloud Connectivity</h5>
+        </div>
+        <div class="text__wrapper">
+          <p class="p-small is--white">
+            Connect your IoT devices to IoT Nexus's secure and ready-to-use cloud infrastructure, enabling immediate access to cloud services for data storage and management.
+          </p>
+        </div>
+      </div>
+      <div class="card__wrapper">
+        <div class="icon mb-30">
+          <img
+            src="https://assets-global.website-files.com/6272e11601c9e296becde07b/6273e5e29581c76d947fa961_blynk_icon_ota.png"
+            loading="lazy"
+            alt=""
+            class="img"
+          />
+        </div>
+        <div class="title__wrapper mb-20">
+          <h5 class="h5 is--lightblue">Alerts and Notifications</h5>
+        </div>
+        <div class="text__wrapper">
+          <p class="p-small is--white">
+            Set up alerts and notifications in IoT Nexus based on predefined thresholds or custom conditions, ensuring timely responses to critical events and maintaining operational efficiency.
+          </p>
+        </div>
+      </div>
+      <div class="card__wrapper">
+        <div class="icon mb-30">
+          <img
+            src="https://assets-global.website-files.com/6272e11601c9e296becde07b/6273e5e27470bda9643f4f0f_blynk_icon_wifi.png"
+            loading="lazy"
+            alt=""
+            class="img"
+          />
+        </div>
+        <div class="title__wrapper mb-20">
+          <h5 class="h5 is--lightblue">Wi-Fi provisioning</h5>
+        </div>
+        <div class="text__wrapper">
+          <p class="p-small is--white">
+            Utilize industry-leading BLE-assisted device provisioning directly from IoT Nexus Apps, simplifying the setup and configuration of IoT devices connected to Wi-Fi networks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border is--grey"></div>
+</div>
+<div class="section is--light">
+  <div class="container is--pt2 is--pb2">
+    <div class="grid is--horisontal">
+      <div class="grid__item">
+        <div class="subtitle__wrapper mb-20">
+          <p class="subtitle is--dark-blue">
+            About Us
+          </p>
+        </div>
+        <div class="h__wrapper mb-40 is--black">
+          <h2 class="h2 is--black">
+            IoT Nexus: Empowering Sustainable Resource Management
+          </h2>
+        </div>
+        <div class="text__wrapper-1-colum">
+          <p class="p is--black">
+            At IoT Nexus, we are dedicated to revolutionizing how we monitor and manage water resources. Our innovative solutions, starting with 'HydroSense,' empower sustainable resource management, focusing on water conservation and responsible usage. We strive to make a meaningful global impact by fostering a culture of sustainability, environmental awareness, and responsible resource management.
+          </p>
+        </div>
+        <div class="button__wrapper">
+          <a href="/signup" class="primary-button w-button">Get Started</a>
+        </div>
+      </div>
+      <div class="grid__item">
+        <div class="img-50">
+          <img
+            src="assets/about_us_image.png"
+            loading="lazy"
+            sizes="100vw"
+            alt=""
+            class="img"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="containers">
+      <div class="footer__content">
+          <p>&copy; 2024 IoT Nexus. All Rights Reserved.</p>
+      </div>
+  </div>
+</footer>
+

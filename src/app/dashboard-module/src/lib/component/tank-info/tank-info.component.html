@@ -1,0 +1,163 @@
+<div class="header">
+  <div class="card-header">
+    <h3 *ngIf="showTable">Your tank information</h3>
+    <h3 *ngIf="showAddTankTemplate">Add tank information</h3>
+    <button *ngIf="showTable" class="add-tank-btn" (click)="toggleAddTankTemplate()">
+      Add tank
+    </button>
+  </div>
+  <div class="inner-header flex"></div>
+  <div>
+    <svg
+      class="waves"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28"
+      preserveAspectRatio="none"
+      shape-rendering="auto"
+    >
+      <defs>
+        <path
+          id="gentle-wave"
+          d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+        />
+      </defs>
+      <g class="parallax">
+        <use
+          xlink:href="#gentle-wave"
+          x="48"
+          y="0"
+          fill="rgba(255,255,255,0.7)"
+        />
+        <use
+          xlink:href="#gentle-wave"
+          x="48"
+          y="3"
+          fill="rgba(255,255,255,0.5)"
+        />
+        <use
+          xlink:href="#gentle-wave"
+          x="48"
+          y="5"
+          fill="rgba(255,255,255,0.3)"
+        />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="card">
+  <div class="main-content">
+    <table *ngIf="showTable" class="custom-table">
+      <thead>
+        <tr>
+          <th>Tank name</th>
+          <th>Location</th>
+          <th>Volume</th>
+          <th>Device Status</th>
+          <th>Water Consumption</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tank of tanks; let i = index">
+          <td>{{ tank.name }}</td>
+          <td>{{ tank.location }}</td>
+          <td>{{ tank.volume }}</td>
+          <td>{{ tank.deviceStatus }}</td>
+          <td>{{ tank.waterConsumption }}</td>
+          <td><img class="icon" src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" alt="Delete Icon" (click)="confirmDelete(i)"/></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-container *ngIf="showAddTankTemplate">
+    <ng-container *ngTemplateOutlet="addTankTemp"></ng-container>
+  </ng-container>
+</div>
+
+
+<ng-template #addTankTemp>
+  <div class="card-body">
+    <form [formGroup]="tankForm" (ngSubmit)="onSubmit()"  >      
+      <div class="card-container">
+        <div class="card-item">
+          <div>
+            <label for="deviceid">Tank name</label>
+            <input
+              type="text"
+              id="tankName"
+              formControlName="tankName"
+              placeholder="Custom tank name"
+              required
+            />
+          </div>
+          <div>
+            <label for="deviceid">Location</label>
+            <input
+              type="text"
+              id="location"
+              formControlName="location"
+              placeholder="Tank location"
+              required
+            />
+          </div>
+          <div>
+            <label for="deviceid">Device Id</label>
+            <input
+              class="input-box"
+              type="text"
+              id="deviceId"
+              formControlName="deviceId"
+              placeholder="Device id"
+              required
+            />
+          </div>
+          <div>
+            <label for="height">Height</label>
+            <input
+              class="input-box"
+              type="text"
+              id="height"
+              formControlName="height"
+              placeholder="Height in mm"
+              required
+            />
+          </div>
+          <div>
+            <label for="diameter">Diameter</label>
+            <input
+              class="input-box"
+              type="text"
+              id="diameter"
+              formControlName="diameter"
+              placeholder="Diameter in mm"
+              required
+            />
+          </div>
+          <div>
+            <label for="volume">Volume</label>
+            <input
+              class="input-box"
+              type="text"
+              id="volume"
+              formControlName="volume"
+              placeholder="Volume in m.cube"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="submit-button-container" fxLayoutAlign="center center">
+        <button type="submit" class="submit-btn">Submit</button>
+        <span *ngIf="tankAddedMessage" class="tank-added-message">{{
+          tankAddedMessage
+        }}</span>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+

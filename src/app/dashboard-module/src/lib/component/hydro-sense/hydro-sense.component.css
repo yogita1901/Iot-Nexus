@@ -1,0 +1,267 @@
+.dashboard {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  margin-top: 4.7em;
+}
+
+.sidenav {
+  /* background-color: #0f3045; */
+  /* background: linear-gradient(90deg, #0f3045 8%, #26709c 100%); */
+  background: linear-gradient(90deg, #055486 8%, #20a8c4e6 100%);
+  color: white;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 18%;
+  gap: 2px;
+  height: 204vh;
+  padding: 8px;
+  transition: width 0.3s ease;
+  box-shadow: 2px 2px 12px #0f3045, inset -3px -3px 7px #144767;
+  /* background-image: url(https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-water-heater-promotion-poster-background-material-image_156776.jpg); */
+  /* position: fixed; */
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  margin: 0px 0px 16px;
+}
+
+.logo {
+  display: flex;
+  place-content: center;
+  color: white;
+  font-size: 28px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 28px;
+}
+
+.image {
+  height: 3em;
+  min-height: 3em;
+  min-width: 4em;
+  object-fit: fill;
+  width: 4em;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  place-content: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.nav-icon{
+  display:flex;
+  align-items: center;
+  cursor: pointer;
+  place-content: center;
+  justify-content: space-between;
+}
+
+.right-content {
+  margin-left: auto;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.option-item:hover {
+  color: #0f3045;
+  background-color: #89dae7;
+  border: none;
+  border-radius: 0.2em;
+  box-shadow: 2px 2px 12px #154159, inset -3px -3px 7px #0a9ea4;
+}
+
+.option-item:active {
+  background-color: #3dcde5;
+  outline: 0;
+  box-shadow: 2px 2px 12px #154159, inset -3px -3px 7px #0a9ea4;
+}
+
+.collapse-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.divider {
+  /* border-top: 1px solid #a7a7ad61;
+  height: 1px; */
+  margin: 16px 0;
+  border-top: none !important;
+    /* height: 0.1em; */
+    background-color: #9c9c9c;
+    box-shadow: inset 0px 1px 1px -1px #4d4d4d, inset 0px -2px 2px 1px white;
+}
+
+.icon {
+  height: 2em;
+  min-height: 1em;
+  min-width: 1em;
+  object-fit: fill;
+  width: 2em;
+  align-items: center;
+  display: flex;
+  margin-right: 8px;
+  justify-content: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 82%;
+  height: 100%;
+  flex: 1;
+  height: 254vh;
+    flex: 1;
+    /* background: linear-gradient(60deg, rgb(58 108 183) 0%, rgba(0, 172, 193, 1) 100%); */
+  /* padding-left: 250px;
+  padding-top: 20px;
+  overflow-y: auto; */
+}
+
+.tank-info-button {
+  background-color: #0f3045;
+  color: #fff;
+  border: 0px solid #ffff;
+  /* padding: 1em 2em; */
+  cursor: pointer;
+  font-family: Raleway, sans-serif;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.profile-icon{
+  height: 2.5em;
+  width: 2.5em;
+  margin-right: 0.5em;
+}
+
+.setting-icon{
+  height: 1.5em;
+  width: 1.5em;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.bowl {
+  clip-path: inset(10px 0 0 0);
+  position: relative;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.5), inset 0 -20px 5px 0 rgba(0, 0, 0, 0.2), inset -15px 0 5px 0 rgba(0, 0, 0, 0.1), inset 15px 0 5px 0 rgba(0, 0, 0, 0.1);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0.65) 100%);
+  margin: 20px;
+}
+.bowl:before {
+  content: "";
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.5), inset 0 -20px 5px 0 rgba(0, 0, 0, 0.2), inset -15px 0 5px 0 rgba(0, 0, 0, 0.1), inset 15px 0 5px 0 rgba(0, 0, 0, 0.1);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.65) 81%, rgba(0, 0, 0, 1) 100%);
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  z-index: 2;
+}
+.bowl:after {
+  content: "";
+  width: 60px;
+  border-radius: 50%;
+  height: 5px;
+  background: #039be4;
+  box-shadow: inset 0 0 10px 0 #000;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: 0;
+  z-index: 2;
+}
+.bowl .inner {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0.65) 100%);
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  clip-path: inset(25px 0 0 0);
+  position: absolute;
+}
+.bowl .inner:before {
+  content: "";
+  width: 10px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  z-index: 2;
+}
+.bowl .inner:after {
+  content: "";
+  width: 20px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  right: 20%;
+  top: 18%;
+  transform: rotate(-25deg);
+  z-index: 2;
+}
+.bowl .fill {
+  animation-name: fillAction;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
+  animation-duration: 8s;
+  animation-fill-mode: forwards;
+}
+.bowl .waveShape {
+  animation-name: waveAction;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
+  width: 300px;
+  height: 150px;
+  fill: #039be4;
+}
+
+@keyframes fillAction {
+  0% {
+    transform: translate(0, 150px);
+  }
+  100% {
+    transform: translate(0, 10px);
+  }
+}
+
+@keyframes waveAction {
+  0% {
+    transform: translate(-150px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

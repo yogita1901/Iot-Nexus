@@ -1,0 +1,50 @@
+<div class="card-container" fxLayout="column">
+  <div class="signup-container">
+    <h2 class="form-heading">SignUp Form</h2>
+    <div class="form-text">
+      Welcome! Fill in your details.
+    </div>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" fxLayout="column" style="width: 95%">
+      <div>
+        <label class="label" for="name">Name</label>
+      </div>
+      <div class="input-container" [ngClass]="{ 'error-border': shouldDisplayError('name') }">
+        <input type="text" id="name" formControlName="name" placeholder="Name" required />
+      </div>
+      <small class="error" *ngIf="(signupForm.get('name')?.invalid && signupForm.get('name')?.touched) || shouldDisplayError('name')">Name is required</small>
+
+      <div>
+        <label class="label" for="email">Email</label>
+      </div>
+      <div class="input-container" [ngClass]="{ 'error-border': shouldDisplayError('email') }">
+        <input type="email" id="email" formControlName="email" placeholder="Email" required />
+      </div>
+      <small class="error" *ngIf="signupForm.get('email')?.errors?.['required'] && signupForm.get('email')?.invalid && (signupForm.touched || submitClicked)">Email is required</small>
+      <small class="error" *ngIf="signupForm.get('email')?.errors?.['email'] && signupForm.get('email')?.invalid && (signupForm.get('email')?.touched || submitClicked) && shouldDisplayError('email')">Invalid email address</small>
+
+      <div>
+        <label class="label" for="password">Password</label>
+      </div>
+      <div class="input-container" [ngClass]="{ 'error-border': shouldDisplayError('password') }">
+        <input type="password" id="password" formControlName="password" placeholder="Password" required />
+      </div>
+      <small class="error" *ngIf="(signupForm.get('password')?.invalid && signupForm.get('password')?.touched) || shouldDisplayError('password')">Password is required</small>
+
+      <div>
+        <label class="label" for="phone">Phone Number</label>
+      </div>
+      <div class="input-container" [ngClass]="{ 'error-border': shouldDisplayError('phoneNumber') }">
+        <input type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="Enter mobile number" pattern="[7-9]{1}[0-9]{9}" required />
+      </div>
+      <small class="error" *ngIf="signupForm.get('phoneNumber')?.errors?.['required'] && signupForm.get('phoneNumber')?.invalid && (signupForm.touched || submitClicked)">Phone number is required</small>
+      <small class="error" *ngIf="signupForm.get('phoneNumber')?.errors?.['pattern'] && (signupForm.get('phoneNumber')?.touched || submitClicked) && shouldDisplayError('phoneNumber')">Invalid phone number</small>
+
+      <div class="submit-button-container" fxLayoutAlign="center center">
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+      <div class="login-link">
+        <a routerLink="/login">Back to Login</a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<nav class="navbar">
+    <div class="container" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="left-content" fxLayout="row" fxLayoutAlign="start center">
+            <div>
+                <a routerLink="/homepage" class="logo-link">
+                 <img class="logo-img" src="assets/iotnexus_only.png" alt="IOT NEXUS">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a routerLink="/homepage">Home</a>
+                <a routerLink="/features">Features</a>
+                <a routerLink="/dashboard">Dashboard</a> 
+                <a routerLink="/aboutus">About Us</a>    
+            </div>
+        </div>
+        <div class="nav-links" fxLayout="row" fxLayoutAlign="end center">
+            <ng-container *ngIf="isAuthenticated; else authLinks">
+                <div class="logout-div" >
+                    <button class="logoutButton" (click)="logout()">Logout</button>
+                    <img class="image" src="assets/log-out.png" alt="" />
+                </div>
+            </ng-container>
+            <ng-template #authLinks>
+                <a routerLink="/login">Login</a>
+                <a routerLink="/signup">Sign Up</a>
+            </ng-template>
+        </div>
+    </div>
+</nav>
+

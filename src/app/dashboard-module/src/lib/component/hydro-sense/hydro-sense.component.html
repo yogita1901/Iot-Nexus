@@ -1,0 +1,40 @@
+<div class="dashboard">
+  <div class="sidenav">
+    <div class="logo-row">
+      <img class="image" src="assets/hydro-sense.png" alt="" />
+      <span class="logo">HydroSense</span>
+    </div>
+    <div class="nav-item">
+      <div class="nav-icon">
+        <img class="profile-icon" src="assets/user_profile.png" alt="" />
+        <span> Yogita </span>
+      </div>
+      <div class="nav-icon"></div>
+    </div>
+    <hr class="divider" />
+    <div
+      class="option-item"
+      routerLink="/dashboard/tankSpecification"
+      routerLinkActive="active"
+    >
+      <img
+        class="icon"
+        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/specifications-10251822-8503269.png"
+        alt=""
+      />
+      <span class="label">Tank Specifications</span>
+    </div>
+    <div
+      class="option-item"
+      routerLink="/dashboard/tankLevel"
+      routerLinkActive="active"
+    >
+      <img class="icon" src="assets/water-tank.png" alt="" />
+      <span class="label">Tank Level</span>
+    </div>
+    <hr class="divider" />
+  </div>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+.waterTanksContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 161px;
+  padding-top: 3em;
+  padding-left: 3em;
+  padding-right: 3em;
+  height: 200vh;
+  /* background: linear-gradient(90deg, #5ad9f869 8%, #0098ff69 100%); */
+}
+
+.waterTank {
+  width: 150px; /* Increased width */
+  height: 220px;
+  border: 2px solid #f5f5f5;
+  /* border: 5px solid #0000007d; */
+  position: relative;
+  overflow: hidden; /* Ensure the overflow is hidden to contain the waves */
+  border-radius: 10px; 
+}
+
+.waterTanksContainer span {
+  /* Styles for the <span> tag */
+  display: block;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.2em; /* Increase font size to make it look like a heading */
+  text-transform: uppercase; /* Convert text to uppercase for emphasis */
+  letter-spacing: 2px; /* Add letter spacing for a unique look */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
+  background: linear-gradient(90deg, #5ad9f8 8%, #056174e6 100%);
+  -webkit-background-clip: text; /* Clip the background to text for gradient effect */
+  -webkit-text-fill-color: transparent; /* Make text transparent to show gradient background */
+}
+
+
+.waterLevel {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: blue;
+  text-align: center;
+  font-size: 0.8em;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    rgba(39, 199, 235, 0.2) 0%,
+    rgb(21, 160, 167) 50%,
+    rgb(53, 153, 219) 100%
+  );
+  animation: waveAnimation 2s linear infinite;
+  border-bottom-left-radius: 10px; 
+  border-bottom-right-radius: 10px;
+}
+
+.waveLayer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(34, 208, 202, 0.2) 0%,
+    rgba(58, 201, 249, 0.5) 50%,
+    rgba(18, 127, 160, 0.2) 100%
+  );
+  animation: waveAnimation 2s linear infinite;
+  border-bottom-left-radius: 10px; 
+  border-bottom-right-radius: 10px;
+}
+
+.tankCover {
+  background-color: #ab9e9e; 
+  height: 30px; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top-left-radius: 10px; 
+  border-top-right-radius: 10px;
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px); 
+  }
+}
+
