@@ -48,30 +48,29 @@
 </div>
 
 <div class="card">
+
+
   <div class="main-content">
-    <table *ngIf="showTable" class="custom-table">
-      <thead>
-        <tr>
-          <th>Tank name</th>
-          <th>Location</th>
-          <th>Volume</th>
-          <th>Device Status</th>
-          <th>Water Consumption</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let tank of tanks; let i = index">
-          <td>{{ tank.name }}</td>
-          <td>{{ tank.location }}</td>
-          <td>{{ tank.volume }}</td>
-          <td>{{ tank.deviceStatus }}</td>
-          <td>{{ tank.waterConsumption }}</td>
-          <td><img class="icon" src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" alt="Delete Icon" (click)="confirmDelete(i)"/></td>
-        </tr>
-      </tbody>
-    </table>
+    <div *ngIf="showTable" class="card-container1">
+      <div *ngFor="let tank of tanks; let i=index" class="custom-card1">
+        <div class="card-header1">
+          <h3 class="card-title1">{{ tank.name }}</h3>
+          <!-- <button class="edit-button" (click)="editTank(i)">Edit</button> -->
+          <div class="icons">
+            <img class="delete-icon1" src="https://cdn4.iconfinder.com/data/icons/top-search-7/128/_edit_pen_write_pencil_compose_document-128.png" alt="edit Icon" (click)="editTank(i)" />
+            <img class="delete-icon1" src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" alt="Delete Icon" (click)="confirmDelete(i)" />
+          </div>      
+        </div>
+        <div class="card-body1">
+          <p><strong>Location:</strong> {{ tank.location }}</p>
+          <p><strong>Volume:</strong> {{ tank.volume }}</p>
+          <p><strong>Device Status:</strong> {{ tank.deviceStatus }}</p>
+        </div>
+      </div>
+    </div>
   </div>
+  
+  
 
   <ng-container *ngIf="showAddTankTemplate">
     <ng-container *ngTemplateOutlet="addTankTemp"></ng-container>
@@ -92,6 +91,7 @@
               formControlName="tankName"
               placeholder="Custom tank name"
               required
+              maxlength="30"
             />
           </div>
           <div>
@@ -102,6 +102,7 @@
               formControlName="location"
               placeholder="Tank location"
               required
+              maxlength="30"
             />
           </div>
           <div>
@@ -113,48 +114,52 @@
               formControlName="deviceId"
               placeholder="Device id"
               required
+              maxlength="30"
             />
           </div>
           <div>
             <label for="height">Height</label>
             <input
               class="input-box"
-              type="text"
+              type="number"
               id="height"
               formControlName="height"
               placeholder="Height in mm"
               required
+              maxlength="5"
             />
           </div>
           <div>
             <label for="diameter">Diameter</label>
             <input
               class="input-box"
-              type="text"
+              type="number"
               id="diameter"
               formControlName="diameter"
               placeholder="Diameter in mm"
               required
+              maxlength="5"
             />
           </div>
           <div>
             <label for="volume">Volume</label>
             <input
               class="input-box"
-              type="text"
+              type="number"
               id="volume"
               formControlName="volume"
               placeholder="Volume in m.cube"
               required
+              maxlength="5"
             />
           </div>
         </div>
       </div>
+      <span *ngIf="tankAddedMessage" class="tank-added-message">{{
+        tankAddedMessage
+      }}</span>
       <div class="submit-button-container" fxLayoutAlign="center center">
         <button type="submit" class="submit-btn">Submit</button>
-        <span *ngIf="tankAddedMessage" class="tank-added-message">{{
-          tankAddedMessage
-        }}</span>
       </div>
     </form>
   </div>

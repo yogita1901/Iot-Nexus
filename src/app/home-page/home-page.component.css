@@ -52,6 +52,11 @@ html, body {
     background-image: url("background_cards.avif");
   }
 
+  .feature:hover{
+    /* box-shadow: 3px 3px 14px 2px #010101cc; */
+    box-shadow: .5em .5em 2.3em #010101cc;
+  }
+
   /* .feature::before{
     content: '';
     position: absolute;
@@ -29198,9 +29203,16 @@ figure {
 }
 
 .card-style{
-  box-shadow: 2px 2px 15px -4px #00000052;
+  border: .5px solid #d1d1d1;
   padding: 1em;
   border-radius: 0.5em;
+  box-shadow: 0 0 11px #d1d1d1;
+  background-color: white;
+}
+
+.card-style:hover{
+  /* box-shadow: 3px 3px 15px -4px #0000007d; */
+  box-shadow: .5em .5em 2.3em #d1d1d1;
 }
 
 .containers{

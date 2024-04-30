@@ -1,51 +1,24 @@
-<!-- 
-<div *ngIf="tankParameters" class="tank-container" [style.height.px]="tankParameters.height" [style.width.px]="tankParameters.width">
-    <div class="water-level" [style.height.%]="waterLevel"></div>
-  </div>
-  <div *ngIf="tankParameters">
-    <span>{{ tankParameters.height }}</span>
-  </div>
-  <div *ngIf="tankParameters">
-    <span>{{ tankParameters.width }}</span>
-  </div> -->
-
-
-  <!-- <div class="tank-container">
-    <div class="tank">
-      <div class="water-level" [style.height.%]="waterLevel"></div>
-      <div class="tank-label">{{ waterLevel }}%</div>
-    </div>
-    <div class="tank-parameters">
-      <p>Height: {{ height }} ft</p>
-      <p>Diameter: {{ diameter }} ft</p>
-      <p>Width: {{ width }} ft</p>
-    </div>
-  </div> -->
-  
-<!-- <div class="waterTanksContainer">
-    <div class="waterTank" *ngFor="let tank of tanks" [attr.id]="'waterTank' + tank.id">
-      <div class="waterLevel" [attr.id]="'waterLevel' + tank.id">Level: {{ tank.value }}% Filled</div>
-    </div>
-  </div>  -->
- 
-  <div class="waterTanksContainer">
-    <div *ngFor="let tank of tanks" [attr.id]="'waterTank' + tank.id">
-      <span> Tank {{tank.id}}</span>
-      <div class="waterTank" >
-      <div class="tankBody"></div>
-      <div class="waterLevel" [style.height.%]="tank.value" [attr.id]="'waterLevel' + tank.id">{{ tank.value }}% Filled
+<h2>Tank water level</h2>
+<div class="waterTanksContainer">
+  <div *ngFor="let tank of tanks" [attr.id]="'waterTank' + tank.id">
+    <span>{{tank.name}}</span>
+    <div class="waterTank" >
+    <div class="tankBody"></div>
+    <div class="waterLevel" [style.height.%]="tank.level" [attr.id]="'waterLevel' + tank.id">{{ tank.level }}% Filled
+      <div class="waveLayer">
         <div class="waveLayer">
-          <div class="waveLayer">
-            <div class="waveLayer"></div>
-          </div>
-          <div class="waveLayer">
-            <div class="waveLayer"></div>
-          </div>
+          <div class="waveLayer"></div>
+        </div>
+        <div class="waveLayer">
+          <div class="waveLayer"></div>
         </div>
       </div>
-      </div>
+    </div>
     </div>
   </div>
+</div>
+
+
   
 
   

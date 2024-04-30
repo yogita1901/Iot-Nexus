@@ -3,14 +3,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TankDataService } from '../../service/tank-data.service';
 import axios from 'axios';
 import { Router } from '@angular/router';
+import { io } from 'socket.io-client';
+export const socket = io("https://iot-nexus-backend.vercel.app")
 
 // Define interfaces for form and tank objects
 interface TankForm {
-  devicename: string;
-  deviceid: number;
+  deviceId: number;
+  location: string;
   height: number;
   diameter: number;
   volume: number;
+  tankName: string;
 }
 export interface Tank {
   id: number;
@@ -19,12 +22,6 @@ export interface Tank {
   volume: number;
   deviceStatus: string;
   waterConsumption: number;
-}
-
-
-interface TankEntry extends TankForm {
-  // You can add additional properties if needed
-  id: number; // Example: unique identifier for each tank
 }
 
 @Component({
@@ -36,10 +33,9 @@ export class TankInfoComponent implements OnInit {
   tankForm: FormGroup;
   showTable: boolean = false;
   tanks: Tank[] = [
-    { id: 1, name: 'ghar ki tanki left', location: 'Location 1', volume:20, deviceStatus: 'Active', waterConsumption: 100 },
-    { id: 2, name: 'ghar ki tanki right', location: 'Location 2', volume:40, deviceStatus: 'Inactive', waterConsumption: 150 },
-    { id: 3, name: 'dukaan ki tanki', location: 'Location 3', volume:50, deviceStatus: 'Active', waterConsumption: 170 },
-    { id: 4, name: 'ghar no 2 ki tanki', location: 'Location 4', volume:80, deviceStatus: 'Inactive', waterConsumption: 160 },
+    { id: 1, name: 'Home Tank', location: 'Limbodi,Indore', volume:1000, deviceStatus: 'Active', waterConsumption: 100 },
+    { id: 2, name: 'Shop Tank', location: 'Delhi', volume:1000, deviceStatus: 'Inactive', waterConsumption: 150 },
+    { id: 3, name: 'Home 2 Tank', location: 'Musakhedi,Indore', volume:5000, deviceStatus: 'Active', waterConsumption: 170 },
   ];
   tankParameters = { height: 100, diameter: 50, width: 80 }; 
   waterLevel = 70; 
@@ -63,10 +59,13 @@ export class TankInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     if(this.tanks.length > 1){
       this.showTable = true;
     }
+    this.fetchTankData();
+    socket.on("connect",()=>{
+      console.log("client is connnected to server!");
+    })
   }
 
   onSubmit(): void {
@@ -81,11 +80,18 @@ export class TankInfoComponent implements OnInit {
         })
         .catch(error => {
           console.error('Error posting tank data:', error);
+          this.tankAddedMessage = 'Error uploading tank data. Please try again.';
         });
     } else {
       this.tankAddedMessage = 'Please fill out all required fields';
     }
   }
+  
+  fetchTankData() {
+    socket.on("tankDataFromDashboard", (data)=>{
+      console.log("tankDataFromDashboard: ", data);
+    })
+    }
 
   confirmDelete(index: number): void {
     if (confirm('Are you sure you want to delete this tank entry?')) {
@@ -107,6 +113,14 @@ export class TankInfoComponent implements OnInit {
   toggleAddTankTemplate(): void {
     this.showTable = false;
     this.showAddTankTemplate = true;
+  }
+
+  editTank(index: number): void {
+    // Implement your edit logic here, for example, you can navigate to an edit page
+    // or open a modal/dialog to edit the tank details
+    console.log('Editing tank:', this.tanks[index]);
+    // Example: Navigate to edit page with tank id
+    // this.router.navigate(['/edit-tank', this.tanks[index].id]);
   }
 
 

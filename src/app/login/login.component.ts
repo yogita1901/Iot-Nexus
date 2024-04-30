@@ -78,7 +78,6 @@ export class LoginComponent implements OnDestroy {
           this.router.navigate(['/dashboard']);
         })
         .catch(error => {
-          console.error('Login error:', error.response.data);
           this.errors = error.response.data; 
           if(error.response.data.error === "Firebase: Error (auth/wrong-password).") {
             this.passErrorAfterSubmit = true;

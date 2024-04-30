@@ -1,10 +1,9 @@
-// 
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { TankDataService } from '../../service/tank-data.service';
-import { NotificationService } from '../../service/notification.service';
 import { io } from 'socket.io-client';
-export const socket = io("https://iot-nexus-backend.vercel.app")
+
+export const socket = io("https://iot-nexus-backend.vercel.app");
 
 @Component({
   selector: 'app-tank-status',
@@ -12,40 +11,39 @@ export const socket = io("https://iot-nexus-backend.vercel.app")
   styleUrls: ['./tank-status.component.css']
 })
 export class TankStatusComponent implements OnInit {
-  tankCount: number=0;
-  // tanks: { id: number; value: number }[] = [];
-  tanks: { id: number, value: number }[] = [
-    { id: 1, value: 90 },
-    { id: 2, value: 80},
-    { id: 3, value: 70 },
-    // { id: 4, value: 60 },
-    // { id: 5, value: 50 },
-    // { id: 5, value: 40 },
-    // { id: 5, value: 30 },
-    // { id: 5, value: 20 },
-    // { id: 5, value: 10 },
-  ];
+  tankCount: number = 0;
+  tanks= [
+    { id: 1, name: 'Home Tank', level:'55' },
+    { id: 2, name: 'Shop Tank', level:'80'},
+    { id: 3, name: 'Home 2 Tank', level: '25'}
+  ];  
   tankState: any;
 
   constructor(
-    private http: HttpClient,
     private tankDataService: TankDataService,
+    private http: HttpClient 
   ) { }
 
   ngOnInit(): void {
     this.tankCount = this.tankDataService.getTankCount();
     this.fetchTankData();
-    socket.on("connect",()=>{
-      console.log("client is connnected to server!");
-    })
+    socket.on("connect", () => {
+      console.log("client is connected to server!");
+    });
+    console.log('TankStatusComponent initialized');
   }
 
   fetchTankData() {
-  socket.on("tankDataFromDashboard", (data)=>{
-    console.log("tankDataFromDashboard: ", data);
-  })
+    this.http.get<any>('https://iot-nexus-backend.vercel.app/dashboard/tankLevels').subscribe(
+      data => {
+        console.log(data); // Log the received data for debugging
+        this.tankState = data; // Assign the received data to tankState for use in the template
+      },
+      error => {
+        console.error('Error fetching tank data:', error);
+      }
+    );
   }
-
-
-
+  
+  
 }

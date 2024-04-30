@@ -4,10 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HydroSenseComponent } from './src/lib/component/hydro-sense/hydro-sense.component';
 import { TankInfoComponent } from './src/lib/component/tank-info/tank-info.component';
-import { DeveloperZoneComponent } from './src/lib/component/developer-zone/developer-zone.component';
 import { TankStatusComponent } from './src/lib/component/tank-status/tank-status.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { SignupComponent } from '../signup/signup.component';
+import { WaterConsumptionComponent } from './src/lib/component/water-consumption/water-consumption.component';
 
 const dashboardRoutes: Routes = [
   {
@@ -17,6 +17,7 @@ const dashboardRoutes: Routes = [
     children: [
       { path: 'tankSpecification', component: TankInfoComponent },
       { path: 'tankLevel', component: TankStatusComponent },
+      { path: 'waterConsumption', component: WaterConsumptionComponent },
       { path: '', redirectTo: 'tankSpecification', pathMatch: 'full' } 
     ]
   },
@@ -27,8 +28,8 @@ const dashboardRoutes: Routes = [
   declarations: [
     HydroSenseComponent,
     TankInfoComponent,
-    DeveloperZoneComponent,
     TankStatusComponent,
+    WaterConsumptionComponent,
   ],
   imports: [
     CommonModule,

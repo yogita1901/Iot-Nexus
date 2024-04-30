@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-// import { io } from 'socket.io-client';
+import { io } from 'socket.io-client';
+export const socket = io("https://iot-nexus-backend.vercel.app");
 
 @Component({
   selector: 'app-hydro-sense',
@@ -9,7 +10,6 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 export class HydroSenseComponent implements OnInit {
   @ViewChild('tankInfo') tankInfoTemplate!: TemplateRef<any>;
   @ViewChild('tankStatus') tankStatusTemplate!: TemplateRef<any>;
-  @ViewChild('microcontrollerStatus') microcontrollerStatusTemplate!: TemplateRef<any>;
   @ViewChild('waterConsumption') waterConsumptionTemplate!: TemplateRef<any>;
 
   selectedTemplate!: TemplateRef<any>;
@@ -29,4 +29,6 @@ export class HydroSenseComponent implements OnInit {
   loadTemplate(template: TemplateRef<any>): void {
     this.selectedTemplate = template;
   }
+
+
 }

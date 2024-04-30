@@ -34,7 +34,7 @@ export class SignupComponent implements OnInit {
       this.formData = this.signupForm.value; // Assign form value to formData
       console.log(this.formData); // Check if formData is populated correctly
   
-      axios.post('https://iot-nexus-backend.vercel.app/signup', this.formData)
+      axios.post('http://localhost:3000/signup', this.formData)
         .then(response => {
           console.log('Response:', response.data);
         })
